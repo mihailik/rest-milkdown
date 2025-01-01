@@ -1,0 +1,46 @@
+.cell-number {
+  position: relative;
+  text-align: right;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.cell-number.negative {
+  color: firebrick;
+}
+
+.cell-number .separator-chunk {
+  opacity: 0.6;
+  font-size: 90%;
+}
+
+.cell-number .decimal-point-chunk {
+  font-weight: 900;
+}
+
+.cell-number .cell-number-minibar {
+  position: absolute;
+  bottom: 0;
+  height: 0.6em;
+}
+
+.cell-number .cell-number-minibar-neutral {
+  background: linear-gradient(to right, gray 1px, silver 1px, silver 50%, gray);
+}
+
+.cell-number .cell-number-minibar-positive {
+  background: linear-gradient(to right, forestgreen 1px, rgba(68, 206, 68, 0.575) 1px, rgba(68, 206, 68, 0.575), 50%, rgb(56, 191, 56));
+}
+
+.cell-number .cell-number-minibar-negative {
+  background: linear-gradient(to left, firebrick 1px, rgba(255, 99, 71, 0.472) 1px, rgba(255, 99, 71, 0.472) 50%, tomato);
+}
+
+.cell-number-total {
+  display: grid;
+  grid-template: 1fr / auto 1fr;
+}
+
+.cell-number-total-label {
+  opacity: 0.6;
+}

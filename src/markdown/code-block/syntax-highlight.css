@@ -1,0 +1,153 @@
+.hi-comment {
+  color: limegreen;
+}
+
+.hi-comment.hi-date-tip {
+  color: rgba(62, 213, 62, 0.608);
+}
+
+.hi-keyword {
+  color: gray;
+}
+
+.hi-identifier {
+  font-weight: bold;
+  color: royalblue;
+}
+
+.hi-localName {
+  font-weight: bold;
+  color: cornflowerblue;
+}
+
+.hi-interfaceName {
+  color: rgb(0, 133, 133);
+}
+
+.hi-built_in {
+  color: rgb(133, 73, 0);
+}
+
+.hi-number {
+  color: forestgreen;
+}
+
+.hi-number.hi-number-padded-group {
+  padding-right: 0.2em;
+}
+
+.hi-undefined {
+  font-style: italic;
+  font-size: 90%;
+  color: silver;
+}
+
+.hi-string {
+  color: darkgoldenrod;
+}
+
+.hi-string-property-quote {
+  color: rgb(214 228 253);
+}
+.hi-property {
+  color: cornflowerblue;
+}
+
+.hi-ref {
+  background: #6495ed29;
+  margin: 0 -0.1em;
+  padding: 0 0.1em;
+  border-radius: 0.3em;
+  border: solid 1px #6495eda1;
+}
+
+.hi-bracematch {
+  text-shadow: 0 0 1px white, 0 0 3px currentColor;
+  background:
+    linear-gradient(to bottom, currentColor -1px, transparent 1px),
+    linear-gradient(to top, currentColor -1px, transparent 1px),
+    linear-gradient(to left, currentColor -1px, transparent 1px),
+    linear-gradient(to right, currentColor -1px, transparent 1px);
+}
+
+.hi-err-Error {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: tomato;
+  background: linear-gradient(to top, transparent, rgb(255 99 71 / 48%) 20%, transparent 60%);
+  margin: 0 -0.2em;
+  padding: 0 0.2em;
+}
+
+.hi-err-semantic-Error {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: fuchsia;
+}
+
+/* .hi-heading-1 in markdown-neat.css */
+ 
+.hi-blockquote {
+  color: white;
+  display: inline-block;
+  width: 1em;
+  background: linear-gradient(to right, silver 0.55em, transparent 0.55em);
+}
+
+.hi-blockquote.hi-paragraph {
+  color: inherit;
+  display: inline;
+  width: unset;
+  border-left: none;
+  background: unset;
+}
+
+.hi-code {
+  border: solid 1px silver;
+  border-top-width: 0.25em;
+  border-bottom-width: 0.25em;
+}
+
+.hi-html {
+  background: rgb(255, 246, 196);
+  border: solid 1px gold;
+  border-radius: 0.2em;
+  padding: 0.2em;
+}
+
+.hi-thematicBreak:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: #0000000a;
+}
+
+.http-verb {
+  color: royalblue;
+}
+
+.http-url {
+  color: rgb(195, 64, 207);
+  text-decoration: underline;
+  text-decoration-thickness: 0.04em;
+  text-decoration-color: rgb(195 64 207 / 46%);
+}
+
+.http-header-name {
+  color: rgba(100, 148, 237, 0.667);
+  font-size: 90%;
+  padding-left: 0.5em;
+}
+
+.http-header-value {
+  color: darkgoldenrod;
+}
+
+.http-header-error {
+  padding-left: 0.4em;
+
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: tomato;
+}

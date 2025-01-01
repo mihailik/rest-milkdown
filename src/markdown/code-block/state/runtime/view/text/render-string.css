@@ -1,0 +1,41 @@
+.hi-json-mark-start, .hi-json-mark-end,
+  .hi-fetch-mark-start, .hi-fetch-mark-end,
+  .hi-bin-mark-start, .hi-bin-mark-end {
+  border: solid 1px #d5b58d;
+  background: linear-gradient(to bottom, #fff5c1, #fbe56e);
+  border-radius: 0.2em;
+  display: inline-block;
+  padding: 0.2em 0.25em;
+  font-size: 80%;
+  position: relative;
+  top: -0.05em;
+  color: #844800;
+  /* transform: skewX(-8deg); */
+}
+
+.hi-fetch-mark-start, .hi-fetch-mark-end {
+  border-color: #8dd5cd;
+  background: linear-gradient(to bottom, #c1feff, #6ee1fb);
+}
+
+.hi-bin-mark-start, .hi-bin-mark-end {
+  border-color: #8d9fd5;
+  background: linear-gradient(to bottom, #c1e9ff, #6eb2fb);
+}
+
+
+.hi-json-mark-start,
+.hi-fetch-mark-start,
+.hi-bin-mark-start {
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  margin-right: 0.1em;
+}
+
+.hi-json-mark-end,
+  .hi-fetch-mark-end,
+  .hi-bin-mark-end {
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  margin-left: 0.1em;
+}

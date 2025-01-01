@@ -1,0 +1,54 @@
+.hi-obj-array-count {
+  font-size: 70%;
+  position: relative;
+  top: -0.4em;
+  color: #62e262;
+}
+
+.hi-obj-array-skip {
+  font-style: italic;
+  color: silver;
+  font-size: 90%;
+}
+
+.inline-view-toggle-button {
+  position: relative;
+  min-width: 1.7em;
+  height: 1.7em;
+  /* margin-top: -0.15em; */
+  margin-bottom: -0.15em;
+  margin-right: 0.5em;
+  z-index: 10;
+  color: rgb(7 140 107);
+  cursor: pointer;
+  border-radius: 0.25em;
+  transition: all 200ms;
+  padding: 0 0.35em;
+  font-size: 85%;
+  border: none;
+  background-color: rgb(224, 255, 244);
+  box-shadow: -0.5px -0.5px 3px inset rgb(42 178 133);
+}
+
+.inline-view-toggle-button .svg-icon-tag {
+  margin-bottom: -0.15em;
+  margin-top: -0.25em;
+}
+
+.inline-view-toggle-button:hover {
+  color: rgb(0, 130, 98);
+  background-color: rgb(236, 253, 244);
+  box-shadow: -0.5px -0.5px 3px inset rgb(0, 156, 104);
+}
+
+.inline-view-toggle-button-selected {
+  color: rgb(202, 255, 242);
+  background-color: rgb(52, 154, 118);
+  box-shadow: 1px 1px 4px inset rgb(5, 104, 71);
+}
+
+.inline-view-toggle-button-selected:hover {
+  color: rgb(215, 255, 245);
+  background-color: rgb(30, 148, 107);
+  box-shadow: 1px 1px 4px inset rgb(2, 81, 54);
+}

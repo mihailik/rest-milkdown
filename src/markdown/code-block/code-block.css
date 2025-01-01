@@ -1,0 +1,290 @@
+#contentHost .milkdown .ProseMirror .code-block {
+  border-radius: 0.2em;
+  position: relative;
+  border-radius: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+#contentHost .milkdown .ProseMirror .code-block-parsed code_block_execution_state {
+  color: gray;
+}
+
+#contentHost .milkdown .ProseMirror .code-block-parsed code_block_execution_state > * {
+  opacity: 0.6;
+}
+
+#contentHost .milkdown .ProseMirror .code-block-executing:before {
+  content: '';
+  z-index: 10;
+  position: absolute;
+  color: cornflowerblue;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.3em;
+  background-image: linear-gradient(90deg, currentColor 50%, transparent 50%),
+    linear-gradient(90deg, currentColor 50%, transparent 50%), linear-gradient(0, currentColor 50%, transparent 50%),
+    linear-gradient(0, currentColor 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 0.8em 2px, 0.8em 2px, 2px 0.8em, 2px 0.8em;
+  background-position: 0 0, 0.8em 100%, 0 0.8em, 100% 0;
+  pointer-events: none;
+
+  animation: marching-ants 500ms infinite linear, color-shift 2500ms infinite linear, fade-in 1000ms forwards;
+}
+
+#contentHost .milkdown .ProseMirror .code-block.code-block-run {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+}
+
+#contentHost .milkdown .ProseMirror .code-block .code-block-toolbar-host {
+  background: #eaeaea;
+  border-bottom: solid 1px #d3d3d3;
+  box-shadow: 2px 4px 6px -2px inset white;
+}
+
+#contentHost .milkdown .ProseMirror .code-block .code-block-toolbar-host::part(code-block-toolbar-backticks) {
+  display: inline-block;
+  font-size: 70%;
+  transform: scale(1, 1.5) translate(0.05em, -0.15em);
+  opacity: 0.15;
+  transition: opacity 0.2s;
+}
+
+#contentHost .milkdown .ProseMirror .code-block:hover .code-block-toolbar-host::part(code-block-toolbar-backticks),
+#contentHost .milkdown .ProseMirror .code-block:focus-within .code-block-toolbar-host::part(code-block-toolbar-backticks) {
+  opacity: 1;
+}
+
+#contentHost .milkdown .ProseMirror .code-block code.code-block-content {
+  display: block;
+  padding: 0.2em 0.5em;
+  color: inherit;
+  background: inherit;
+  box-shadow: 1px 1px 4px 1px inset #00000014;
+  border-radius: 0;
+}
+
+#contentHost .milkdown .ProseMirror .code-block .code-block-bottom-bar-host {
+  background: whitesmoke;
+  border-top: solid 1px #dedede;
+  box-shadow: 0px -1px 4px inset #0000001f;
+  line-height: 0;
+}
+
+#contentHost .milkdown .ProseMirror .code-block.code-block-run .code-block-bottom-bar-host {
+  box-shadow: none;
+}
+
+#contentHost .milkdown .ProseMirror .code-block.code-block-run-error .code-block-bottom-bar-host {
+  background: #ffdcdc;
+}
+
+#contentHost .milkdown .ProseMirror .code-block.code-block-run-success .code-block-bottom-bar-host {
+  background: #ceefc1;
+  border-top: solid 1px #96ee74;
+  color: #0d610d;
+}
+
+#contentHost .milkdown .ProseMirror .code-block .code-block-bottom-bar-host::part(code-block-run-button) {
+  border: solid 1px silver;
+  background: black;
+  color: white;
+  cursor: pointer;
+  padding: 0.3em 0.5em;
+  border-radius: 0.4em;
+  margin: 0.2em 0.7em;
+  font-size: 80%;
+  font-family: inherit;
+  line-height: 1;
+}
+
+#contentHost .milkdown .ProseMirror .code-block .code-block-bottom-bar-host::part(code-block-run-button[disabled]) {
+  color: gray;
+}
+
+#contentHost .milkdown .ProseMirror .code-block.code-block-run-success .code-block-bottom-bar-host::part(code-block-run-button) {
+  background: rgb(11, 105, 4);
+}
+
+#contentHost .milkdown .ProseMirror .code-block.code-block-run-error .code-block-bottom-bar-host::part(code-block-run-button) {
+  background: rgb(124, 0, 41);
+}
+
+#contentHost .milkdown .ProseMirror .code-block .code-block-bottom-bar-host::part(code-block-small-status-label) {
+  font-size: 90%;
+}
+
+#contentHost .milkdown .ProseMirror pre.code-block-result {
+  padding: 0.2em 0.5em;
+  margin-bottom: 0.5em;
+  color: inherit;
+  background: #fbfbfb;
+  box-shadow: -1px -2px 4px 1px inset #0000000a;
+  border-radius: 0.25em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border: solid 1px #d2d2d2;
+  border-top: none;
+  font-family: inherit;
+  font-size: 90%;
+}
+
+#contentHost .milkdown .ProseMirror .code_block {
+  border-radius: 0.2em;
+  position: relative;
+  border-radius: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+#contentHost .milkdown .ProseMirror .code_block .code-block-tooltip-highlight {
+  box-shadow: 0 3px 1px -1px rgba(255, 136, 0);
+}
+
+#contentHost .milkdown .ProseMirror .code_block .code_block_backtick_language {
+  background: #eaeaea;
+  border-bottom: solid 1px #d3d3d3;
+  box-shadow: 2px 4px 6px -2px inset white;
+  border-radius: 0.2em 0.2em 0 0;
+  border: solid 1px silver;
+  border-bottom: none;
+
+  position: sticky;
+  top: -0.6em;
+}
+
+#contentHost .milkdown .ProseMirror .code_block .code_block_backtick_language::before {
+  content: '```';
+  display: inline-block;
+  font-size: 70%;
+  transform: scale(1, 1.5) translate(0.05em, -0.15em);
+  opacity: 0.15;
+  transition: opacity 0.2s;
+}
+
+#contentHost .milkdown .ProseMirror .code_block pre.code_block_script {
+  background: white;
+  border-radius: 0;
+  border: solid 1px silver;
+  border-top: none;
+  border-bottom: none;
+  white-space: pre-wrap;
+}
+
+.code-block-tooltip {
+  position: absolute;
+  background: #fffbe9;
+  border: solid 1px #9c8d69;
+  color: #574009;
+  border-radius: 0.15em;
+  box-shadow: 5px 4px 14px #00000024;
+  padding: 0.2em 0.5em;
+  margin-left: 0;
+  margin-top: -3em;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow: auto;
+  transition: transform 300ms;
+  z-index: 100;
+}
+
+.completions-menu {
+  background: white;
+  border: solid 1px silver;
+  border-radius: 0.15em;
+  box-shadow: 5px 4px 14px #00000024;
+  margin-left: -0.25em;
+  margin-top: 1.4em;
+  max-width: 90%;
+  max-height: 80vh;
+  overflow: auto;
+  z-index: 1;
+  transition: transform 300ms;
+}
+
+.completions-menu .completions-menu-item {
+  padding: 0.2em 0.5em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.completions-menu .completions-menu-item-selected {
+  background-image: linear-gradient(to bottom, rgba(63, 126, 243, 0.337), rgba(69, 132, 251, 0.402));
+}
+
+.completions-menu .completions-menu-item .completion-entry-core-name {
+  display: inline-block;
+  min-width: 14em;
+}
+
+.completions-menu .completions-menu-item .completion-entry-core-name .completion-entry-name-matching {
+  font-weight: bold;
+}
+
+.completions-menu .completions-menu-item .completion-entry-side-description {
+  zoom: 0.8;
+  transform: scaleY(1.12);
+  display: inline-block;
+}
+
+.completions-menu .completions-menu-item-selected .completion-entry-side-description,
+    .completions-menu .completions-menu-item:hover .completion-entry-side-description {
+  opacity: 0.7;
+}
+
+#contentHost .milkdown .ProseMirror .code_block_execution_state {
+  border: solid 1px tomato;
+  white-space: pre-wrap;
+}
+
+#contentHost .milkdown .ProseMirror .code_block .code_block_execution_state {
+  background: whitesmoke;
+  border: none;
+  border-top: solid 1px #dedede;
+  box-shadow: 0px -1px 4px inset #0000001f;
+  border-radius: 0 0 0.2em 0.2em;
+  border: solid 1px silver;
+  border-top: none;
+
+  line-height: 1.1;
+  padding-top: 0.25em;
+
+  font-size: 85%;
+  color: #000000db;
+}
+
+#contentHost .milkdown .ProseMirror .code_block .code_block_execution_state::before {
+  content: '```';
+  display: inline-block;
+  font-size: 70%;
+  transform: scale(1, 1.5) translate(0.05em, -0.15em);
+  opacity: 0.15;
+  transition: opacity 0.2s;
+}
+
+#contentHost .milkdown .ProseMirror .code_block .code_block_execution_state span {
+  s-transition: all 400ms;
+}
+
+#contentHost .milkdown .ProseMirror .code_block .code_block_execution_state .low {
+  opacity: 0.4;
+}
+
+@keyframes marching-ants {
+  0% { background-position: 0 0, 0.8em 100%, 0 0.8em, 100% 0 }
+  100% { background-position: 0.8em 0, 0 100%, 0 0, 100% 0.8em }
+}
+
+@keyframes color-shift {
+  0% { color: royalblue }
+  50% { color: orange }
+  100% { color: royalblue }
+}
+
+@keyframes fade-in {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}

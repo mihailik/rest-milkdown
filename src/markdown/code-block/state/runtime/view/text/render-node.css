@@ -1,0 +1,12 @@
+.hi-node-text {
+  font-style: italic;
+  padding: 0.25em;
+  padding-left: 0.05em;
+  line-height: 1.7em;
+  background: white;
+}
+
+.hi-node-text-json {
+  color: #844800;
+  font-size: 80%;
+}

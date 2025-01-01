@@ -1,0 +1,43 @@
+html body .code_block_execution_state .ag-root-wrapper {
+  border: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  border-top: solid 1px #cdcdcd;
+  border-bottom-left-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+
+  --ag-range-selection-border-color: rgb(0, 161, 24);
+}
+
+html body .code_block_execution_state .ag-root-wrapper .ag-header {
+  background: #e5e5e5;
+}
+
+html body .code_block_execution_state .ag-root-wrapper .ag-header .ag-icon {
+  opacity: 0.3;
+  transition: opacity 300ms;
+}
+
+html body .code_block_execution_state .ag-root-wrapper .ag-header:hover .ag-icon {
+  opacity: 1;
+}
+
+html body .code_block_execution_state .ag-root-wrapper .ag-row {
+  border: none;
+}
+
+html body .code_block_execution_state .ag-root-wrapper .ag-row.ag-row-odd {
+  background-color: #00000005;
+  background-image:
+    linear-gradient(to top, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+html body .code_block_execution_state .ag-root-wrapper .ag-row .imposed-cell-range-selected {
+  background-color: rgba(0, 179, 111, 0.06);
+}
+
+html body .code_block_execution_state .ag-root-wrapper .ag-has-focus .ag-row .imposed-cell-range-selected {
+  background-color: rgba(0, 179, 111, 0.18);
+}

@@ -1,0 +1,592 @@
+html {
+  box-sizing: border-box;
+  font-family:
+    'Noto Sans',
+    'Noto Sans Math',
+    'Noto Emoji',
+    'Noto Sans Symbols',
+    'Noto Sans Symbols 2',
+    'Arial Unicode';
+
+  background: white;
+  color: black;
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html #tools label, html #tools button {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+html.loaded-site #tools label, html.loaded-site #tools button {
+  opacity: 1;
+}
+
+html #toolbar {
+  position: fixed;
+  right: 1.25em;
+  top: 1em;
+  width: 3em;
+  pointer-events: none;
+  z-index: 190;
+}
+
+html #toolbar button {
+  font-size: inherit;
+}
+
+@media (max-width: 540px) {
+  html #toolbar {
+    right: 0;
+    top: 0;
+    width: 2em;
+  }
+}
+
+html #toolbar .accessible-caption {
+  font-size: 0.000000001px;
+  position: absolute;
+}
+
+html #toolbar {
+  pointer-events: all;
+}
+
+html #toolbar #logo {
+  color: #2a931b;
+  position: relative;
+  padding: 0.1em;
+  border-radius: 3em;
+  width: 3em;
+  height: 3em;
+  transform: rotate(-12deg);
+  margin-left: -1em;
+  font-size: 200%;
+  background-image: repeating-linear-gradient(0deg, transparent, #4a9f4a24 2px, transparent 4px);
+  box-shadow: 1px 8px 13px -2px #00000069, -2px -4px 6px 8px #ffffff inset, 2px 4px 6px 4px #91c29a inset;
+}
+
+@media (max-width: 540px) {
+  html #toolbar #logo {
+    font-size: 100%;
+    margin-top: -0.7em;
+    margin-left: -0.6em;
+    box-shadow: 1px 5px 6px -2px #0000003d,
+      -2px -4px 6px 8px #ffffff inset,
+      2px 4px 6px 4px #91c29a inset;
+  }
+}
+
+html #toolbar #logo:before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  border: solid 0.2em currentColor;
+  border-radius: 3em;
+}
+
+html #toolbar #logo > svg {
+  position: absolute;
+  left: 0.5em; top: 0.5em;
+  width: 2em;
+  height: 2em;
+  filter: drop-shadow(2px 3px 2px #336b3375);
+}
+
+html #toolbar #format-tools {
+  padding-top: 1em;
+  padding-right: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+@media (max-width: 540px) {
+  html #toolbar #format-tools {
+    padding-top: 0.9em;
+    padding-right: 0.1em;
+    gap: 0.6em;
+    font-size: 77%;
+  }
+}
+
+.fly-formatting {
+  color: #0c640093;
+  border-top: dotted 0.1em #55a44a;
+}
+
+html #toolbar #format-tools button {
+  pointer-events: all;
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border-radius: 3em;
+  border: solid 2px #b6deb0;
+  color: #55a44a;
+  background: #ffffffd9;
+  transition: background-color 0.2s;
+  box-shadow: 1px 5px 13px #00000017;
+  cursor: pointer;
+
+  padding: 0;
+
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-weight: 900;
+}
+
+@media (max-width: 540px) {
+  html #toolbar #format-tools button {
+    border: solid 1px #95f487;
+    box-shadow: 1px 2px 5px #0000001f;
+  }
+}
+
+html #toolbar #format-tools button:hover {
+  background-color: #dbebd9;
+}
+
+
+html #toolbar #format-tools button#boldItalicToggle.bold,
+  html #toolbar #format-tools button#boldItalicToggle.italic,
+  html #toolbar #format-tools button#boldItalicToggle.bold-italic {
+  background: #55a44a;
+  border-color: transparent;
+  color: white;
+}
+
+html #toolbar #format-tools button#boldItalicToggle.italic,
+    html #toolbar #format-tools button#boldItalicToggle.bold-italic {
+  color: transparent;
+}
+
+html #toolbar #format-tools button#boldItalicToggle.italic:after,
+  html #toolbar #format-tools button#boldItalicToggle.bold-italic:after {
+  position: absolute;
+  left: 0; width: 100%;
+  text-align: center;
+  color: white;
+  font-style: italic;
+}
+
+html #toolbar #format-tools button#boldItalicToggle.italic:after {
+  content: 'i';
+  font-size: 120%;
+  margin-top: -0.13em;
+}
+
+html #toolbar #format-tools button#boldItalicToggle.bold-italic:after {
+  content: 'Bi';
+}
+
+
+html #toolbar #format-tools button#headingToggle.h1,
+  html #toolbar #format-tools button#headingToggle.h2,
+  html #toolbar #format-tools button#headingToggle.h3,
+  html #toolbar #format-tools button#headingToggle.h4,
+  html #toolbar #format-tools button#headingToggle.h5,
+  html #toolbar #format-tools button#headingToggle.h6 {
+  background: #55a44a;
+  border-color: transparent;
+  color: transparent;
+}
+
+html #toolbar #format-tools button#headingToggle.h1:after,
+  html #toolbar #format-tools button#headingToggle.h2:after,
+  html #toolbar #format-tools button#headingToggle.h3:after,
+  html #toolbar #format-tools button#headingToggle.h4:after,
+  html #toolbar #format-tools button#headingToggle.h5:after,
+  html #toolbar #format-tools button#headingToggle.h6:after {
+  position: absolute;
+  left: 0; width: 100%;
+  text-align: center;
+  color: white;
+}
+
+html #toolbar #format-tools button#headingToggle.h1:after { content: 'H1'; }
+html #toolbar #format-tools button#headingToggle.h2:after { content: 'H2'; }
+html #toolbar #format-tools button#headingToggle.h3:after { content: 'H3'; }
+html #toolbar #format-tools button#headingToggle.h4:after { content: 'H4'; }
+html #toolbar #format-tools button#headingToggle.h5:after { content: 'h5'; }
+html #toolbar #format-tools button#headingToggle.h6:after { content: 'h6'; }
+
+
+html #toolbar #format-tools button:before {
+    content: "";
+    position: absolute;
+    top: -0.4em;
+    left: -1em;
+    width: 4em;
+    height: 2.5em;
+}
+
+@media (max-width: 540px) {
+  html #toolbar #format-tools button:before {
+    top: -0.25em;
+    left: -1em;
+    width: 3em;
+    height: 2.25em;
+  }
+}
+
+html #toolbar #format-tools button#dividerInsert {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  height: 0.3em;
+  width: 1.7em;
+  box-shadow: 1px 3px 4px #00000017;
+}
+
+html #toolbar #format-tools button#dividerInsert:before {
+  top: -0.5em;
+  height: 1.2em;
+}
+
+html #toolbar #format-tools button#dividerInsert >b {
+  color: transparent;
+}
+
+html #toolbar #format-tools button#unicodeFormatToggle,
+    html #toolbar #format-tools #unicode-subsection button {
+  border: solid 2px #b0ded9;
+  color: #4aa48d;
+  box-shadow: 1px 5px 13px #00000017;
+  font-family: inherit;
+}
+
+html #toolbar #format-tools #unicode-subsection {
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 200ms, opacity 200ms;
+  transform: scale(0.3);
+  transform-origin: top;
+
+  font-size: 90%;
+  margin-top: -0.3em;
+}
+
+html #toolbar #format-tools #unicode-subsection.slide {
+  height: auto;
+  padding-bottom: 1em;
+  pointer-events: all;
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* UNICODE BOLD ITALIC */
+
+html #toolbar #format-tools #unicode-subsection button#uni-boldItalicToggle.bold,
+  html #toolbar #format-tools #unicode-subsection button#uni-boldItalicToggle.italic,
+  html #toolbar #format-tools #unicode-subsection button#uni-boldItalicToggle.bold-italic {
+  background: #4aa48d;
+  border-color: transparent;
+  color: white;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-boldItalicToggle.italic,
+  html #toolbar #format-tools #unicode-subsection button#uni-boldItalicToggle.bold-italic {
+  color: transparent;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-boldItalicToggle.italic:after,
+  html #toolbar #format-tools #unicode-subsection button#uni-boldItalicToggle.bold-italic:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-style: italic;
+}
+html #toolbar #format-tools #unicode-subsection button#uni-boldItalicToggle.italic:after {
+  content: 'i';
+  font-size: 120%;
+}
+html #toolbar #format-tools #unicode-subsection button#uni-boldItalicToggle.bold-italic:after {
+  margin-top: 0.1em;
+  content: 'Bi';
+}
+
+/* UNICODE JOY */
+
+html #toolbar #format-tools #unicode-subsection button#uni-joyToggle {
+  color: transparent;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-joyToggle:after {
+  content: 'ᣫ';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #4aa48d;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-joyToggle.joy {
+  background: #4aa48d;
+  border-color: transparent;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-joyToggle.joy:after {
+  color: white;
+}
+
+
+/* UNICODE WTF: WIDE/TYPEWRITER/FRACTUR */
+
+html #toolbar #format-tools #unicode-subsection button#uni-wtfToggle {
+  color: transparent;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-wtfToggle:after {
+  content: '𝕎';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: #4aa48d;
+  text-align: center;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-wtfToggle.wide,
+  html #toolbar #format-tools #unicode-subsection button#uni-wtfToggle.typewriter,
+  html #toolbar #format-tools #unicode-subsection button#uni-wtfToggle.fractur {
+  background: #4aa48d;
+  border-color: transparent;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-wtfToggle.wide:after,
+  html #toolbar #format-tools #unicode-subsection button#uni-wtfToggle.typewriter:after,
+  html #toolbar #format-tools #unicode-subsection button#uni-wtfToggle.fractur:after {
+  color: white;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-wtfToggle.wide:after { content: '𝕎'; }
+html #toolbar #format-tools #unicode-subsection button#uni-wtfToggle.typewriter:after { content: '𝚃'; }
+html #toolbar #format-tools #unicode-subsection button#uni-wtfToggle.fractur:after { content: '𝕱'; }
+
+
+/* UNICODE CURSIVE/SUPER */
+
+html #toolbar #format-tools #unicode-subsection button#uni-cursiveSuperToggle {
+  color: transparent;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-cursiveSuperToggle:after {
+  content: '𝒞ˢ';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: #4aa48d;
+  text-align: center;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-cursiveSuperToggle.cursive,
+html #toolbar #format-tools #unicode-subsection button#uni-cursiveSuperToggle.super {
+  background: #4aa48d;
+  border-color: transparent;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-cursiveSuperToggle.cursive:after,
+html #toolbar #format-tools #unicode-subsection button#uni-cursiveSuperToggle.super:after {
+  color: white;
+}
+
+
+html #toolbar #format-tools #unicode-subsection button#uni-cursiveSuperToggle.cursive:after {
+  content: '𝒞';
+  margin-left: -0.1em;
+}
+html #toolbar #format-tools #unicode-subsection button#uni-cursiveSuperToggle.super:after {
+  content: "s";
+  margin-top: -0.4em;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+
+/* UNICODE ROUND/PLATE/BOX */
+
+html #toolbar #format-tools #unicode-subsection button#uni-rpxToggle {
+  color: transparent;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-rpxToggle:after {
+  content: 'Ⓡ';
+  position: absolute;
+  left: 0;
+  top: -0.3em;
+  width: 100%;
+  color: #4aa48d;
+  text-align: center;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-rpxToggle.round,
+html #toolbar #format-tools #unicode-subsection button#uni-rpxToggle.plate,
+html #toolbar #format-tools #unicode-subsection button#uni-rpxToggle.box {
+  background: #4aa48d;
+  border-color: transparent;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-rpxToggle.round:after,
+html #toolbar #format-tools #unicode-subsection button#uni-rpxToggle.plate:after,
+html #toolbar #format-tools #unicode-subsection button#uni-rpxToggle.box:after {
+  color: white;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-rpxToggle.round:after { content: 'Ⓡ'; }
+html #toolbar #format-tools #unicode-subsection button#uni-rpxToggle.plate:after {
+  content: '🅿';
+  top: 0.05em;
+  font-weight: bold;
+  font-size: 110%;
+}
+html #toolbar #format-tools #unicode-subsection button#uni-rpxToggle.box:after { content: '🅇'; }
+
+
+/* UNICODE KHAZAD */
+
+html #toolbar #format-tools #unicode-subsection button#uni-khazadToggle {
+  color: transparent;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-khazadToggle:after {
+  content: 'ᛕ';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #4aa48d;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-khazadToggle.khazad {
+  background: #4aa48d;
+  border-color: transparent;
+}
+
+html #toolbar #format-tools #unicode-subsection button#uni-khazadToggle.khazad:after {
+  color: white;
+}
+
+
+/* RUN BUTTON */
+html #toolbar #format-tools button#codeInsert {
+  color: transparent;
+}
+
+html #toolbar #format-tools button#codeInsert:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  content: '++';
+  color: #55a44a;
+  letter-spacing: -0.1em;
+  margin-left: -0.05em;
+}
+
+
+#unicode_tools button#bold { grid-column: 1/2; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+#unicode_tools button#bold::before { content: '𝗕'; }
+
+#unicode_tools button#italic { grid-column: 2/3; border-left: none; border-right: none; border-radius: 0; }
+#unicode_tools button#italic::before { content: '𝘐'; }
+
+#unicode_tools button#underlined { grid-column: 3/4; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+#unicode_tools button#underlined::before { content: 'U̲'; }
+
+#unicode_tools button#joy b::before {
+  content: 'ᣫ';
+  position: relative;
+}
+
+#unicode_tools button#joy i::before {
+  content: 'oy';
+  position: relative;
+  top: -0.25em;
+}
+
+#unicode_tools button#wide { grid-column: 1/2; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+#unicode_tools button#wide::before { content: '𝕎'; transform: scale(1.3) translateX(0.06em); display: inline-block; }
+
+#unicode_tools button#typewriter { grid-column: 2/3; border-left: none; border-right: none; border-radius: 0; }
+#unicode_tools button#typewriter::before { content: '𝚃'; transform: scale(1.5) translateX(0.02em); display: inline-block; }
+
+#unicode_tools button#fractur { grid-column: 3/4; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+#unicode_tools button#fractur::before { content: '𝕱'; transform: scale(1.2) translateX(0.0em); display: inline-block; }
+
+
+#unicode_tools button#cursive { grid-column: 1/3; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+#unicode_tools button#cursive b::before { content: '𝓒'; left: -0.1em; }
+
+#unicode_tools button#super { grid-column: 3/4; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+#unicode_tools button#super b::before { content: 'ˢ'; left: -0.05em; top: -0.05em; }
+
+
+#unicode_tools button#box { grid-column: 1/2; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+#unicode_tools button#box::before { content: '🅇'; transform: scale(1.6) translate(0.06em, -0.09em); display: inline-block; }
+
+#unicode_tools button#plate { grid-column: 2/3; border-left: none; border-right: none; border-radius: 0; }
+#unicode_tools button#plate::before { content: '🅿'; transform: scale(1.2) translateX(0.02em); display: inline-block; }
+
+#unicode_tools button#round { grid-column: 3/4; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+#unicode_tools button#round::before { content: 'Ⓡ'; transform: scale(1.4) translate(-0.05em, -0.09em); display: inline-block; }
+
+
+#unicode_tools button#khazad b::before {
+  content: 'ᛕ';
+  left: 0.09em;
+  top: -0.08em;
+}
+
+#unicode_tools button#khazad i::before {
+  content: 'ᚦ';
+  padding: 0 0.15em;
+  top: -0.3em;
+  left: 0.06em;
+  transform: scale(1.5);
+  display: inline-block;
+}
+
+
+#format_textarea {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  border: none;
+  padding: 1em;
+  outline: none;
+  font: inherit;
+  resize: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#contentHost .milkdown {
+  height: 100%;
+}
+
+#version {
+  position: fixed;
+  bottom: 2em;
+  right: 0;
+  font-size: 80%;
+  color: #acacac;
+  text-orientation: mixed;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-shadow: 0 0 2px white, 0 0 2px white, 0 0 2px white;
+}

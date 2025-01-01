@@ -1,0 +1,98 @@
+.hi-element-pre-opening-tag,
+  .hi-element-opening-tag,
+  .hi-element-post-opening-tag,
+  .hi-element-pre-closing-tag,
+  .hi-element-closing-tag,
+  .hi-element-post-closing-tag,
+  .hi-element-post-opening-and-closing-tag,
+  .hi-element-post-opening-tag-lead,
+  .hi-element-post-opening-and-closing-tag-lead,
+  .hi-element-post-opening-tag-ellipsis,
+  .hi-element-post-opening-and-closing-tag-ellipsis,
+  .hi-element-post-opening-tag {
+  background: linear-gradient(to bottom, #fff0d1, #fff9e3);
+  border: solid 1px #cba35f;
+  border-top-color: #e4b769;
+  padding: 0.2em 0;
+  font-size: 80%;
+  position: relative;
+  top: -0.05em;
+  color: #844800;
+  /* transform: skewX(-8deg); */
+  margin-bottom: 0.1em;
+  margin-top: 0.1em;
+}
+
+.hi-element-opening-tag,
+  .hi-element-closing-tag {
+  border-left: none;
+  border-right: none;
+  color: rgb(105, 65, 134);
+  font-weight: 600;
+}
+
+.hi-element-post-opening-tag-lead,
+  .hi-element-post-opening-and-closing-tag-lead,
+  .hi-element-post-opening-tag-ellipsis,
+  .hi-element-post-opening-and-closing-tag-ellipsis {
+  border-left: none;
+  border-right: none;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}
+
+.hi-element-pre-opening-tag,
+  .hi-element-pre-closing-tag {
+  border-radius: 0.2em;
+  padding-left: 0.25em;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  /* transform: skewX(-8deg); */
+}
+
+.hi-element-post-opening-tag,
+  .hi-element-post-closing-tag,
+  .hi-element-post-opening-and-closing-tag {
+  padding-right: 0.25em;
+  border-radius: 0.2em;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.hi-element-pre-opening-tag {
+  border-top-left-radius: 0.7em;
+  border-bottom-left-radius: 0.7em;
+}
+
+.hi-element-post-closing-tag,
+  .hi-element-post-opening-and-closing-tag {
+  border-top-right-radius: 0.7em;
+  border-bottom-right-radius: 0.7em;
+}
+
+.hi-element-post-opening-tag {
+  box-shadow: 4px 0 4px -3px #00000080;
+}
+
+.hi-element-pre-closing-tag {
+  box-shadow: -4px 0 4px -3px #00000080;
+}
+
+.hi-element-child-count {
+  background: unset;
+  border: unset;
+  cursor: pointer;
+
+  font-size: 80%;
+  font-style: italic;
+  padding-left: 0.1em;
+  padding-right: 0.3em;
+  position: relative;
+  top: -0.1em;
+}
+
+.hi-element-child-count:hover {
+  color: cornflowerblue;
+}
